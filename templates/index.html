@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CCTV Surveillance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚨 AI-Driven Intelligent Surveillance</h1>
+        </header>
+        <main>
+            <div class="video-container">
+                <h2>Live Feed</h2>
+                <img src="{{ url_for('video_feed') }}" width="100%">
+            </div>
+            <div class="alerts-container">
+                <h2>Threat Alerts Log</h2>
+                <ul id="alerts-list">
+                    <li>No threats detected yet.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <audio id="alert-sound" src="{{ url_for('static', filename='sounds/alert.mp3') }}" preload="auto"></audio>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
